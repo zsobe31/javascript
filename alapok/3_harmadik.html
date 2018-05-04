@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript alapok</title>
+  <link rel="stylesheet" href="main.css">
+    
+    <script>
+     <!--
+      //..javascript kód...
+     -->
+    </script>
+    
+</head>
+
+<body id="body3">
+
+  <h3 id="masodik">
+    Ez a harmadik weblap tartalma!
+    <br><br>
+    <input type="button" value="a második weblap megnyitása a főablakban" onclick="parent.location='2_masodik.html'">
+    <br>
+    <input type="button" value="vissza a nyitólapra" onclick="top.location='1_elso.html'">
+  </h3>
+  
+  <table id="table">
+  
+    <tr>
+    
+      <td id="cella">
+      
+        <iframe id="keret1" name="keret" src="2_masodik.html"></iframe>  
+        
+      </td>
+    
+    </tr>
+  
+  </table>
+  
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+
+#nyito {
+  text-align: center;
+}
+
+#table {
+  text-align: center;
+  width: 50%;
+  height: 400px;
+}
+
+#cella {
+  width: 100%;
+}
+
+#keret {
+  width: 100%;
+  height: 200px;
+  margin: 50%;
+  border: 0; 
+}
+
+#body {
+  background-color: aquamarine;
+}
+
+#masodik {
+  text-align: center;
+}
+
+#body3 {
+  background-color: antiquewhite;
+}
+
+#keret1 {
+  width: 60%;
+  height: 150px;
+  margin: 50%;
+  border: 0; 
+}
+
+#szingomb {
+  text-align: center;
+}
+
+#sz-gomb {
+  width: 200px;
+  height: 100px;
+  background-color: aquamarine;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+#sz-gomb2 {
+  width: 200px;
+  height: 100px;
+  background-color: aquamarine;
+  font-size: 26px;
+  font-weight: bold;
+}
