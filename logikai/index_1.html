@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript alapok</title>
+  <link rel="stylesheet" href="style.css">
+    
+    <script>
+   
+      
+      function udvozles() {
+        
+        
+        //var ora = prompt('mennyi az idő?');
+        
+        var datum = new Date();
+        var ora = datum.getHours();
+        var perc = datum.getMinutes();
+        
+        var uzenet = '';
+        
+        if ( (ora > 0 && ora <= 4) || ( ora > 22 && ora <= 24) ) {
+          uzenet = 'kellemes éjszakát!';
+            }
+        else if ( ora > 4 && ora <= 10) {
+          uzenet = 'jóreggelt!'; 
+                 }
+        else if ( ora > 10 && ora <= 18) {
+          uzenet = 'jónapot!';
+        }
+        else if ( ora > 18 && ora <= 22) {
+          uzenet = 'szép estét!';
+        }
+        //else if ( ora > 22 && ora <= 24) {
+          //uzenet = 'kellemes éjszakát!';
+        //}
+        else {
+          uzenet = 'szia';
+        }
+        if ( uzenet == 'szia') {
+          alert(uzenet)
+        }
+        else {
+          alert(uzenet + ' ' + ora + ' ora ' + perc + ' van!')
+
+        }
+      }
+      
+  
+      
+    </script>
+    
+</head>
+
+<body>
+  
+  <br><br>
+  
+  <p id="uzenet">
+    
+    <input type="button" value="Hello" onclick="udvozles()">
+    <br><br>
+    
+  
+    <br><br>
+    <script>
+    
+    var x = 4;
+    var y = 12;
+      
+      //document.write( x + ' + ' + y + ' = ' +(x + y));
+      
+      //document.write( y + ' - ' + x + ' = ' +(y - x));
+      
+      //document.write( x + ' * ' + y + ' = ' +(x * y));
+      
+      //document.write( y + ' / ' + x + ' = ' +(y / x));
+    
+    </script>
+    
+    
+  </p>
+
+  
+</body>
+
+</html>
