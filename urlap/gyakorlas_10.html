@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript alapok</title>
+  <link rel="stylesheet" href="gyakorlas_10.css">
+
+  <script>
+    
+    function ellenorzes() {
+      
+      var rendben = true;
+      var cim = document.urlap.email.value;
+      var hossz = cim.length;
+      //alert(hossz);
+     
+      var kukac = cim.indexOf('@');
+      
+      var kukac_utan = cim.substr(kukac + 1, hossz - kukac - 1);
+      var pont = kukac_utan.indexOf('.');
+      //alert(kukac_utan); 
+      
+      var utolso_pont = kukac_utan.lastIndexOf('.');
+      
+      var utolso_resz = kukac_utan.length - utolso_pont - 1;
+      
+      
+      if (hossz < 7) {
+        rendben = false;
+      }
+      
+      if (kukac < 2) {
+        rendben = false;
+      }
+      
+      if (pont < 1) {
+        rendben = false;
+      }
+      
+      if ( utolso_resz < 2 || utolso_resz > 3) {
+        rendben = false;
+      }
+      
+      if (rendben == false) {
+        alert('Az e-mail cím helytelen!');
+      }
+      else {
+        document.urlap.submit();
+      }
+      
+    }
+    
+  </script>
+
+</head>
+
+<body>
+
+  <br><br><br>
+
+  <form name="urlap" id="urlap" action="feldolgozas.html" method="post">
+
+    <h3>e-mail:
+
+      <input name="email" id="email">
+
+    </h3>
+
+    <br><br><br>
+
+    <input type="button" value="ellenőrzés és küldés" id="ellenoriz" onclick="ellenorzes()">
+    
+    <!-- <input type="submit" value="elküldés" id="ellenoriz"> -->
+    
+
+
+  </form>
+
+</body>
+
+</html>

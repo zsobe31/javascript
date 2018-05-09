@@ -1,0 +1,117 @@
+
+/*#uzenet {
+  text-align: center;
+}
+
+#szamlalo {
+  color: blue;
+  font-weight: 700;
+  border: 0px;
+  text-align: center;
+  font-size: 50px;
+}
+
+#gomb {
+  font-size: 100px;
+  width: 500px;
+  height: 200px;
+  border-radius: 20px;
+  background-color: aquamarine
+}
+
+#szinek {
+  width: 200px;
+}
+
+#email {
+  width: 200px;
+}
+
+#urlap {
+  text-align: center;
+}
+*/
+#koszonet {
+  text-align: center;
+}
+
+#div1 {
+  width: 500px;
+  height: 600px;
+  background: #E2EBFE;
+  border: 2px #330066 solid;
+  color: #330066;
+  font-family: tahoma;
+  font-size: 14px;
+}
+#fej {
+  text-align: center;
+  color: #330066;
+}
+#leiras {
+  padding: 0 20px;
+  font-size: 12px;
+}
+#table1 {
+  font-size: 10px;
+  color: #330066;
+  text-align: left;
+  margin: 10px;
+}
+#table_table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+}
+#sor1 {
+  background-color: #330066;
+  color: #ffffff;
+  font-size: 13px;
+}
+#sor2, #sor4, #sor6 {
+  background-color: white;
+  padding: 5px 0;
+}
+#sor3, #sor5 {
+  background-color: lightgray;
+  padding: 5px 0;
+}
+.cella1, .cella2, .cella3, .cella4, .cella5, .cella6 {
+  text-align: left;
+  padding-left: 5px;
+}
+#radio1, #radio2 {
+  margin-left: 30px;
+}
+#fizet {
+  background-color: #E2EBFE;
+  border: 0px;
+  color: #330066;
+  text-align: right;
+  width: 100px;
+  font-size: 16px;
+}
+#leiras1 {
+  text-align: center;
+  font-size: 14px;
+}
+#adatok {
+  padding: 0 20px;
+}
+#nev {
+  width: 200px;
+  color: #330066;
+}
+#email1 {
+  width: 200px;
+  color: #330066;
+}
+#cim {
+  width: 350px;
+  color: #330066;
+}
+#kuld {
+  text-align: center;
+}
+
+

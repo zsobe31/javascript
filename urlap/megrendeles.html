@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, 
+  initial-scale=1.0">
+  <title>Javascript alapok</title>
+  <link rel="stylesheet" href="gyakorlas_10.css">
+
+  <script>
+    
+    function email_check() {
+      
+      var rendben = true;
+      var cim = document.urlap.email.value;
+      var hossz = cim.length;
+      //alert(hossz);
+     
+      var kukac = cim.indexOf('@');
+      
+      var kukac_utan = cim.substr(kukac + 1, hossz - kukac - 1);
+      var pont = kukac_utan.indexOf('.');
+      //alert(kukac_utan); 
+      
+      var utolso_pont = kukac_utan.lastIndexOf('.');
+      
+      var utolso_resz = kukac_utan.length - utolso_pont - 1;
+      
+      
+      if (hossz < 7) {
+        rendben = false;
+      }
+      
+      if (kukac < 2) {
+        rendben = false;
+      }
+      
+      if (pont < 1) {
+        rendben = false;
+      }
+      
+      if ( utolso_resz < 2 || utolso_resz > 3) {
+        rendben = false;
+      }
+      
+      if (rendben) {
+        //alert('Az e-mail cím helytelen!');
+        return true;
+      }
+      else {
+        //document.urlap.submit();
+        return false;
+      }
+      
+    }
+
+    function dijkalkulator() {
+
+      var tandij = 0;
+      var lemezek = 0;
+
+      if (document.urlap.html.checked) {
+        tandij += 2500;
+        lemezek += 1;
+      }
+
+      if (document.urlap.css.checked) {
+        tandij += 2400;
+        lemezek += 1;
+      }
+
+      if (document.urlap.javascript.checked) {
+        tandij += 3700;
+        lemezek += 1;
+      }
+
+      if (document.urlap.php.checked) {
+        tandij += 4000;
+        lemezek += 1;
+      }
+
+      if (document.urlap.java.checked) {
+        tandij += 4500;
+        lemezek += 1;
+      }
+
+      if (document.urlap.letolti[1].checked) {
+        tandij += lemezek*500;
+        document.getElementById('postacim').style.display='';
+      }
+      else {
+        document.getElementById('postacim').style.display='none';
+      }
+
+      document.urlap.fizetendo.value = tandij + ' ft';
+    }
+
+    function ellenoriz() {
+
+      document.urlap.elkuld.disabled = true;
+      document.urlap.elkuld.value = 'Kis türelmet, az ellenőrzés folyamatban...';
+
+      var rendben;
+
+      if (document.urlap.html.checked || document.urlap.css.checked || document.urlap.javascript.checked || document.urlap.php.checked || document.urlap.java.checked) {
+          rendben = true;
+      } else {
+          rendben = false;
+          alert('Jelölj be legalább egyet!');
+      }
+
+      if (rendben && document.urlap.nev.value == '') {
+          rendben = false;
+          alert('Írd be a nevedet!');
+          document.urlap.nev.focus();
+      }
+
+      if (rendben && !email_check()) {
+          rendben = false;
+          alert('Az e-mail cím helytelen!');
+          document.urlap.email.focus();
+      }
+
+      if (rendben && document.urlap.letolti[1].checked && document.urlap.cim.value =='') {
+          rendben = false;
+          alert('Írd be a címed!');
+          document.urlap.cim.focus();
+      }
+
+      if (rendben) {
+        document.urlap.submit();
+      }
+      else {
+        document.urlap.elkuld.value = 'Kattints ide a megrendeléshez!';
+        document.urlap.elkuld.disabled = false;
+      }
+
+    }
+    
+  </script>
+
+</head>
+
+<body>
+
+  <br><br><br>
+
+  <div id="div1">
+  
+   <form name="urlap" action="feldolgozas.html">
+
+   <h2 id="fej">Megrendelés</h2>
+
+   <p id="leiras">Jelőld be azokat az anyagokat, amiket meg szeretnél rendelni! Ha CD/DVD-n kéred az anyagokat, lemezenként 500 ft. anyagköltséget számítunk fel!</p>
+   <br>
+   <div id="table1">
+   <table id="table_table">
+     
+    <tr id="sor1">
+      <td class="cella1">Az anyag megnevezése</td>
+      <td class="cella">Listaár</td>
+      <td class="cella">Megrendelés</td>
+    </tr>
+    
+    <tr id="sor2">
+      <td class="cella1">HTML alapok</td>
+      <td class="cella">2500 ft.</td>
+      <td class="cella"><input type="checkbox" name="html" onclick="dijkalkulator()"></td>
+    </tr>
+
+    <tr id="sor3">
+      <td class="cella1">CSS alapok</td>
+      <td class="cella">2400 ft.</td>
+      <td class="cella"><input type="checkbox" name="css" onclick="dijkalkulator()"></td>
+    </tr>
+
+    <tr id="sor4">
+      <td class="cella1">Javascript alapok</td>
+      <td class="cella">3700 ft.</td>
+      <td class="cella"><input type="checkbox" name="javascript" onclick="dijkalkulator()"></td>
+    </tr>
+
+    <tr id="sor5">
+      <td class="cella1">PHP alpapok</td>
+      <td class="cella">4000 ft.</td>
+      <td class="cella"><input type="checkbox" name="php" onclick="dijkalkulator()"></td>
+    </tr>
+
+    <tr id="sor6">
+      <td class="cella1">JAVA alapok</td>
+      <td class="cella">4500 ft.</td>
+      <td class="cella"><input type="checkbox" name="java" onclick="dijkalkulator()"></td>
+    </tr>
+
+   </table>
+
+     <br>
+     <p id="leiras">Letöltöd az anyagokat, vagy CD/DVD-n kéred őket?</p>
+     <input type="radio" name="letolti" value="1" checked id="radio1" onclick="dijkalkulator()"> Letöltöm!
+     <input type="radio" name="letolti" value="0" id="radio2" onclick="dijkalkulator()"> Lemezen kérem (+500 ft/lemez)!
+
+     <br><br>
+     <p id="leiras1">Fizetendő összeg:
+     <input type="" name="fizetendo" id="fizet" value="0 ft." readonly></p>
+     
+         <p id="leiras">Kérkel add meg a megrendeléshez szükséges adataidat:</p>
+           <table id="adatok">
+             <tr>
+               <td class="cella1">Név:</td>
+               <td><input type="" name="nev" id="nev"></td>
+             </tr>
+             <tr>
+               <td class="cella1">e-mail:</td>
+               <td><input type="" name="email" id="email1"></td>
+             </tr>
+             <tr id="postacim">
+               <td class="cella1">postacím:</td>
+               <td><input type="" name="cim" id="cim"></td>
+             </tr>
+           </table>
+
+       <br><br>
+
+      <div id="kuld">
+        <input type="button" name="elkuld" value="Kattints ide a megrendeléshez!" onclick="ellenoriz()">
+      </div>
+
+     </div>
+
+
+    </form>
+
+  	
+  </div>
+
+</body>
+
+</html>
